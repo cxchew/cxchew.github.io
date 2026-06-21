@@ -11,6 +11,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.repo-link {
+				color: #00E5FF !important;
+				text-decoration: none !important;
+				font-weight: 700;
+				transition: all 0.3s ease-in-out;
+				border-bottom: 1px solid transparent !important;
+			}
+			.repo-link:hover {
+				color: #ffffff !important;
+				border-bottom: 1px solid #ffffff !important;
+				text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+			}
+		</style>
 	</head>
 	<body class="landing is-preload">
 
@@ -29,6 +43,7 @@
 											<li><a href="https://cxchew.github.io/">Home</a></li>
 											<li><a href="https://github.com/cxchew/cxchew.github.io">My Template</a></li>
 											<li><a href="https://github.com/cxchew/cxchew.github.io/tree/main/images">Images Used</a></li>
+										</ul>
 									</div>
 								</li>
 							</ul>
@@ -39,8 +54,9 @@
 					<section id="banner">
 						<div class="inner">
 							<h2>Chew Chiu Xian</h2>
-							<p>Computer Science(Data Engineering) Student<br />
-							from Universiti Teknologi Malaysia<br /></p>
+							<p>22-year-old Year 3 Data Engineering Student<br />
+							at Universiti Teknologi Malaysia (UTM)<br />
+							with a current CGPA of 3.98.</p>
 							<ul class="actions special">
 								<li><a href="https://github.com/cxchew" class="button primary">My GitHub Pages</a></li>
 							</ul>
@@ -53,10 +69,10 @@
 						<div class="inner">
 							<header class="major">
 								<h2>About Me</h2>
-								<p>Hi there!☺️  Welcome to my e-portfolio page. Let me introduce myself. My name is Chew Chiu Xian. Im 19 years old. I always love to have a jog early in the morning to stretch my legs🦵.
-									Sometimes, I will also play badminton with my fellow friends!🏸. Rollercooster may not be my favourite, but I'm about to bring all of you for a fun rides to explore the world of data.🎢
-								Now, without further waiting, lets get Started!!!</p>
-								<p align="center"><img src="images/WhatsApp Image 2024-01-17 at 08.57.38.jpeg" width="70%" height="70%" /></p>
+								<p>Hi there!☺️ Welcome to my e-portfolio page. Let me introduce myself. My name is Chew Chiu Xian. I'm 22 years old. I always love to have a jog early in the morning to stretch my legs🦵.<br/>
+									Sometimes, I will also play badminton with my fellow friends!🏸. Rollercoasters may not be my favourite, but I'm about to bring all of you for a fun ride to explore the world of data.🎢<br/>
+								Now, without further waiting, let's get Started!!!</p>
+								<p align="center"><img src="images/WhatsApp Image 2024-01-17 at 08.57.38.jpeg" width="70%" height="70%" alt="Profile Photo" /></p>
 							</header>
 							<ul class="icons major">
 								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
@@ -69,28 +85,40 @@
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="https://media.karousell.com/media/photos/products/2018/10/07/programming_assignment_c_c_java_python_1538881854_a148ed2e_progressive.jpg" alt="" /></div><div class="content">
-								<h2>Skills</h2>
-								<p>I have some great programming skills in some apps such as C++, Java and Python. Besides that, I also know having skills on photoshop and video editing.💻🧑‍💻. <\br>Below is my stats📊: </p>
-								<p>- Java   = 35% </p>
-								<p>- C++    = 45%</p>
-								<p>- Python = 5% </p>
-								<p>- HTML   = 15%</p>
+							<div class="image"><img src="https://media.karousell.com/media/photos/products/2018/10/07/programming_assignment_c_c_java_python_1538881854_a148ed2e_progressive.jpg" alt="Skills Matrix" /></div><div class="content">
+								<h2>Technical Matrix & Ecosystem Weaponry</h2>
+								<p>Equipped with a versatile toolkit spanning software development, database architecture, and data engineering. 💻🧑‍💻 Below is my tech stack:</p>
+								<ul style="list-style-type: none; padding: 0;">
+									<li style="margin-bottom: 10px;"><strong>🛠️ Programming & Databases:</strong> Python, SQL (MS SQL Server), C++, PHP, JavaScript, MySQL.</li>
+									<li style="margin-bottom: 10px;"><strong>☁️ Cloud, DevOps & Analytics:</strong> Microsoft Azure, Docker, Git/GitHub, XAMPP, Power BI, Alteryx Designer, Excel, Figma.</li>
+									<li><strong>🧠 Soft Skills:</strong> Analytical Thinking, Complex Problem-Solving, Team Collaboration, Time Management, Technical Communication, Team Leadership.</li>
+								</ul>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/What-Skills-Do-I-Need-to-Become-a-Data-Scientist.jpg" width="90%" height="90%" /></div><div class="content">
+							<div class="image"><img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/What-Skills-Do-I-Need-to-Become-a-Data-Scientist.jpg" width="90%" height="90%" alt="Ambition" /></div><div class="content">
 								<h2>Ambition</h2>
-								<p>All of you might thought that my ambition is to become data engineer, but my true ambition is to become a Data Scientist. You might wonder, "Why did I choose data engineering course in UTM,
-								 and not choosing the Data Science course?🤔".Well, the reason of me choosing data engineer course in UTM is because data engineering course can help me to understand more about the process of managing 
-								and storing data, which can help me in my future career. </p>
+								<p>Many might think that my ambition is to become a Data Engineer, but my true ambition is to become a Data Scientist. You might wonder, "Why did I choose the Data Engineering course in UTM,
+								 and not the Data Science course?🤔". Well, the reason I chose Data Engineering is because it helps me understand more about the core processes of managing 
+								and storing data, which builds a rock-solid foundation for my future career.</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="https://apicms.thestar.com.my/uploads/images/2023/06/04/2108856.jpeg" alt="" /></div><div class="content">
-								<h2>Education🏫</h2>
-								<p>As I mentioned before, I am currently Data Engineering Students in UTM Johore. I entered the university on 1st October 2023. Before university, I studied in Kelantan Matriculation College, located in
-								 Pasir Puteh, Kelantan. While before Matric, I studied at Sekolah Menengah Kebangsaan, Sultan Yahya Petra 1.</p>
+							<div class="image"><img src="https://apicms.thestar.com.my/uploads/images/2023/06/04/2108856.jpeg" alt="Education" /></div><div class="content">
+								<h2>Education 🏫</h2>
+								<p>As mentioned before, I am currently a Year 3 Data Engineering Student at UTM Johore, having entered the university on 1st October 2023. Prior to university, I studied at Kelantan Matriculation College, located in Pasir Puteh, Kelantan, where I actively served as a Trader for the Secretariat Society. My earlier education was completed at Sekolah Menengah Kebangsaan Sultan Yahya Petra 1.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="https://t3.ftcdn.net/jpg/03/48/82/72/360_F_348827252_jiRP2iPXPsSSocitv90vj3z7RYjXoP3O.jpg" alt="Hackathons" style="object-fit: cover;" /></div><div class="content">
+								<h2>Hackathons & Computational Achievements 🏆</h2>
+								<p>I actively participate in hackathons to challenge myself and build innovative tech solutions under pressure. Some of my recent competitive achievements include:</p>
+								<ul style="line-height: 1.8;">
+									<li><strong>Project 2030: MyAI Future Hackathon | Build with AI 2026</strong> <br/><em>(GDG on Campus UTM - Secure Digital Track)</em></li>
+									<li><strong>4th Place | Cisco AI Hackathon 2024</strong></li>
+									<li><strong>MCMC Datathon 2024 Recognition</strong></li>
+									<li><strong>Data Science Digital Race (DSDR) Qualifier</strong></li>
+								</ul>
 							</div>
 						</section>
 					</section>
@@ -99,35 +127,74 @@
 					<section id="three" class="wrapper style3 special">
 						<div class="inner">
 							<header class="major">
-								<h2>PROJECTS</h2>
-								<p>All projects that I currently done in Data Engineering Year 1 are stored in Github. Links are in below (Click the Name, not image).☺️</p>
+								<h2>Featured High-Level Engineering Platforms</h2>
+								<p>Explore my top 4 engineering architectures and systems below. Click on the project titles to view more details or live deployments.</p>
 							</header>
 							<ul class="features">
-								<li class="icon fa-gem">
-									<h3><a href="https://github.com/cxchew/Discrete-Structure">Discrete Structure</h3>
-									<p>Code: SECI-1013-02</p>
-									<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSha_B1R8QjNPR_QG-ACqasTk9hYu6eF-2Mu6Yk7mKjow&s" width ="70%" height="70%" alt="" /></p>
+								<li class="icon solid fa-cloud">
+									<h3><a href="#" style="text-decoration: none; border-bottom: none;">Recoverable Assets & Inventory Risk Pipeline</a></h3>
+									<p><strong>Stack:</strong> Azure, Power BI</p>
+									<p>An enterprise pipeline for analyzing recoverable assets and modeling inventory risk using Microsoft Azure and visualizing through Power BI dashboards.</p>
 								</li>
-								<li class="icon fa-flag">
-									<h3><a href="https://github.com/cxchew/Digital-Logic">Digital Logic</h3>
-									<p>Code: SECR-1013-02</p>
-									<p><img src="https://t3.ftcdn.net/jpg/03/48/82/72/360_F_348827252_jiRP2iPXPsSSocitv90vj3z7RYjXoP3O.jpg" width ="70%" height= "70%" alt="" /></p>
+								<li class="icon solid fa-database">
+									<h3><a href="#" style="text-decoration: none; border-bottom: none;">Academic Advising & Progress Tracker</a></h3>
+									<p><strong>Stack:</strong> SAP Build Apps, MySQL, UML Architecture</p>
+									<p>A comprehensive tracking system managing academic advising and student progress, built on a robust UML architecture with SAP Build Apps and MySQL.</p>
 								</li>
-								<li class="icon solid fa-laptop">
-									<h3><a href="https://github.com/cxchew/TIS">Technology and Information System</h3>
-									<p>Code: SECP-1013-02</p>
-									<p><img src="https://www.shutterstock.com/image-photo/laptop-analytical-data-technology-background-600nw-2283866229.jpg" width ="80%" height= "80%" alt="" /></p>
+								<li class="icon solid fa-server">
+									<h3><a href="#" style="text-decoration: none; border-bottom: none;">KADA Cooperative Cloud Architecture</a></h3>
+									<p><strong>Stack:</strong> PHP, MySQL, HTML5/CSS3, JavaScript</p>
+									<p>A cooperative cloud financial architecture designed to manage operations securely, utilizing PHP and a fully responsive frontend design.</p>
 								</li>
-								<li class="icon solid fa-code">
-									<h3><a href="https://github.com/cxchew/Programming-Technique">Programming Technique 1</h3>
-									<p>Code: SECJ-1013-02</p>
-									<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_MTtESMFFenTm9h85Ws4vOqsp47L8LAPBZoJsBKn0w&s" width ="50%" height= "50%" alt="" /></p>
+								<li class="icon fa-leaf">
+									<h3><a href="https://bioflora.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; border-bottom: none;">BioFlora Plant Identification Hub</a></h3>
+									<p><strong>Stack:</strong> Astro Framework, MDX Engine, Tailwind CSS</p>
+									<p>A lightning-fast, modern botanical identification hub powered by Astro, leveraging an MDX Engine for content and styled impeccably with Tailwind CSS.</p>
 								</li>
-								<li class="icon fa-heart">
-									<h3><a href="https://github.com/cxchew/ULRS1032-10">Integrity and Anti-Corruption Course</h3>
-									<p>Code: ULRS-1013-02</p>
-									<p><img src="https://www.coe.int/documents/18548532/25660652/0/75e60319-c3bf-ae1e-bef2-97ffd2133864" width ="70%" height= "70%" alt="" /></p>
 							</ul>
+
+							<hr style="border: none; border-top: 1px solid #555555; margin: 40px 0;" />
+
+							<h2 style="font-family: inherit; color: #ffffff;">🗺️ Academic Curriculum & Repository Index</h2>
+							<p style="color: #bbbbbb;">A comprehensive directory tracking the programmatic deliverables, architectures, and systems engineered across my 3-year undergraduate timeline:</p>
+
+							<table width="100%" cellpadding="10" cellspacing="0" border="0" style="font-family: inherit; margin-top: 20px;">
+							  <tr>
+								<td width="33.3%" valign="top" style="border-right: 1px dashed #666666; padding-right: 15px;">
+								  <h3 style="margin-top: 0; color: #ffffff;">🗓️ Year 1</h3>
+								  <ul style="line-height: 1.8; padding-left: 20px; text-align: left;">
+									<li>💻 <a href="https://github.com/cxchew/Programming-Technique" target="_blank" rel="noopener noreferrer" class="repo-link">Programming Technique</a></li>
+									<li>⚡ <a href="https://github.com/cxchew/Digital-Logic" target="_blank" rel="noopener noreferrer" class="repo-link">Digital Logic</a></li>
+									<li>🧮 <a href="https://github.com/cxchew/Discrete-Structure" target="_blank" rel="noopener noreferrer" class="repo-link">Discrete Structure</a></li>
+									<li>🧭 <a href="https://github.com/cxchew/TIS-02-2023" target="_blank" rel="noopener noreferrer" class="repo-link">Information System & Tech</a></li>
+									<li>⚖️ <a href="https://github.com/cxchew/ULRS1032-10/tree/main" target="_blank" rel="noopener noreferrer" class="repo-link">Integrity & Anti-Corruption</a></li>
+									<li>🌿 <a href="https://bioflora.vercel.app/" target="_blank" rel="noopener noreferrer" class="repo-link">BioFlora Plant Hub</a></li>
+								  </ul>
+								</td>
+								<td width="33.3%" valign="top" style="border-right: 1px dashed #666666; padding-left: 15px; padding-right: 15px;">
+								  <h3 style="margin-top: 0; color: #ffffff;">🗓️ Year 2</h3>
+								  <ul style="line-height: 1.8; padding-left: 20px; text-align: left;">
+									<li>🐧 <a href="https://github.com/cxchew/Operating-System" target="_blank" rel="noopener noreferrer" class="repo-link">Operating System</a></li>
+									<li>🛢️ <a href="https://github.com/cxchew/Database" target="_blank" rel="noopener noreferrer" class="repo-link">Database Systems</a></li>
+									<li>🧦 <a href="https://github.com/cxchew/Network-Communication" target="_blank" rel="noopener noreferrer" class="repo-link">Network Communication</a></li>
+									<li>🐘 <a href="https://github.com/cxchew/StudentRegistrationSystem" target="_blank" rel="noopener noreferrer" class="repo-link">Student Registration CRUD</a></li>
+									<li>⛏️ <a href="https://github.com/cxchew/Data-Mining" target="_blank" rel="noopener noreferrer" class="repo-link">Data Mining Algorithms</a></li>
+									<li>💳 <a href="https://github.com/cxchew/KADA-system" target="_blank" rel="noopener noreferrer" class="repo-link">KADA Financial System</a></li>
+								  </ul>
+								</td>
+								<td width="33.3%" valign="top" style="padding-left: 15px;">
+								  <h3 style="margin-top: 0; color: #ffffff;">🗓️ Year 3</h3>
+								  <ul style="line-height: 1.8; padding-left: 20px; text-align: left;">
+									<li>🏢 <a href="https://github.com/cxchew/ESDM" target="_blank" rel="noopener noreferrer" class="repo-link">Enterprise Systems Design</a></li>
+									<li>📆 <a href="https://github.com/cxchew/ESDM-Advising-Appointment-Scheduling" target="_blank" rel="noopener noreferrer" class="repo-link">Advising Appointment App</a></li>
+									<li>🤖 <a href="https://github.com/cxchew/Artificial-Intelligence" target="_blank" rel="noopener noreferrer" class="repo-link">Artificial Intelligence</a></li>
+									<li>⚡ <a href="https://github.com/cxchew/HPDP" target="_blank" rel="noopener noreferrer" class="repo-link">High Performance Data Proc</a></li>
+									<li>📱 <a href="https://github.com/brendan-chia/App-Development-_GENIUSAQILOS" target="_blank" rel="noopener noreferrer" class="repo-link">App Dev GENIUSAQILOS</a></li>
+									<li>🛡️ <a href="https://github.com/cxchew/Special-Topic-to-Data-Engineering" target="_blank" rel="noopener noreferrer" class="repo-link">Special Topics in DE</a></li>
+								  </ul>
+								</td>
+							  </tr>
+							</table>
 						</div>
 					</section>
 
