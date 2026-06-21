@@ -6,23 +6,181 @@
 -->
 <html>
 	<head>
-		<title>Chew Chiu Xian</title>
+		<title>Chew Chiu Xian - Data Engineering Profile</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			.repo-link {
+			@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+			body, input, select, textarea {
+				font-family: 'Inter', 'Segoe UI', sans-serif !important;
+			}
+			
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: 800 !important;
+				letter-spacing: -0.02em;
+			}
+
+			p, li {
+				font-weight: 300;
+			}
+
+			/* Premium Backgrounds and Gradients */
+			body.landing #page-wrapper {
+				background-color: #0a0a0f !important;
+				background-image: radial-gradient(circle at 15% 50%, rgba(58, 47, 247, 0.15), transparent 25%),
+								  radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.1), transparent 25%) !important;
+			}
+
+			#banner {
+				background-color: #0a0a0f !important;
+				background-image: linear-gradient(to bottom, rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 1)), url('images/banner.jpg') !important; /* fallback image if any */
+			}
+
+			.wrapper.style1, .wrapper.style2, .wrapper.style3, .wrapper.style4, .wrapper.style5 {
+				background-color: transparent !important;
+			}
+
+			/* Glassmorphism Cards */
+			.glass-card {
+				background: rgba(255, 255, 255, 0.03);
+				backdrop-filter: blur(12px);
+				-webkit-backdrop-filter: blur(12px);
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				border-radius: 16px;
+				padding: 2.5em;
+				margin: 0 auto 2em auto;
+				box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+				transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+				text-align: left;
+			}
+
+			.glass-card:hover {
+				transform: translateY(-5px);
+				border-color: rgba(58, 47, 247, 0.6);
+				box-shadow: 0 12px 40px 0 rgba(58, 47, 247, 0.2);
+			}
+
+			.glass-card h2, .glass-card h3 {
+				color: #ffffff !important;
+				border-bottom: none;
+			}
+
+			/* Link Enhancements */
+			a {
+				transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out !important;
+			}
+
+			.glass-card a, .repo-link, .features a, .glass-content a {
 				color: #00E5FF !important;
 				text-decoration: none !important;
-				font-weight: 700;
-				transition: all 0.3s ease-in-out;
+				font-weight: 600;
 				border-bottom: 1px solid transparent !important;
 			}
-			.repo-link:hover {
+
+			.glass-card a:hover, .repo-link:hover, .features a:hover, .glass-content a:hover {
 				color: #ffffff !important;
+				text-shadow: 0 0 12px rgba(0, 229, 255, 0.9);
 				border-bottom: 1px solid #ffffff !important;
-				text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+			}
+
+			/* Tag Grid for Skills */
+			.tag-grid {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-top: 15px;
+			}
+
+			.tag {
+				background: rgba(58, 47, 247, 0.15);
+				border: 1px solid rgba(58, 47, 247, 0.5);
+				color: #e0eaff;
+				padding: 6px 14px;
+				border-radius: 20px;
+				font-size: 0.85em;
+				font-weight: 600;
+				letter-spacing: 0.5px;
+				transition: background 0.3s ease;
+			}
+			.tag:hover {
+				background: rgba(58, 47, 247, 0.4);
+			}
+
+			/* Spotlight structural overrides */
+			.spotlight {
+				background: transparent !important;
+			}
+			.spotlight .content {
+				background: rgba(255, 255, 255, 0.02) !important;
+				backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.05);
+				border-radius: 16px;
+				margin: 20px;
+			}
+			.spotlight .image.css-pattern-1 { background: linear-gradient(135deg, rgba(58, 47, 247, 0.8) 0%, rgba(0, 229, 255, 0.8) 100%); display: flex; align-items: center; justify-content: center;}
+			.spotlight .image.css-pattern-2 { background: linear-gradient(135deg, rgba(30, 30, 40, 0.8) 0%, rgba(58, 47, 247, 0.5) 100%); display: flex; align-items: center; justify-content: center;}
+			.spotlight .image.css-pattern-3 { background: linear-gradient(135deg, rgba(15, 32, 39, 0.8) 0%, rgba(32, 58, 67, 0.8) 50%, rgba(44, 83, 100, 0.8) 100%); display: flex; align-items: center; justify-content: center;}
+			
+			.pattern-icon {
+				font-size: 5em;
+				color: rgba(255,255,255,0.5);
+			}
+
+			.spotlight .image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			/* Academic Matrix Enhancements */
+			.academic-matrix {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				margin-top: 30px;
+			}
+			@media screen and (min-width: 768px) {
+				.academic-matrix {
+					flex-direction: row;
+				}
+			}
+			.academic-col {
+				flex: 1;
+				padding: 25px;
+				border-right: 1px solid rgba(255, 255, 255, 0.1);
+				text-align: left;
+			}
+			.academic-col:last-child {
+				border-right: none;
+			}
+			.academic-col h3 {
+				color: #3A2FF7 !important;
+				font-weight: 800;
+				margin-bottom: 20px;
+			}
+			.academic-col ul {
+				list-style: none;
+				padding-left: 0;
+				margin: 0;
+			}
+			.academic-col ul li {
+				position: relative;
+				padding-left: 30px;
+				margin-bottom: 16px;
+				line-height: 1.6;
+			}
+			.academic-col ul li::before {
+				content: '▹';
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: #00E5FF;
+				font-weight: bold;
+				font-size: 1.4em;
+				line-height: 1.2;
 			}
 		</style>
 	</head>
@@ -33,16 +191,15 @@
 				
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Spectral</a></h1>
+						<h1><a href="index.html">Chew Chiu Xian</a></h1>
 						<nav id="nav">
 							<ul>
-								<li class="Chew Chiu Xian">
-									<a href="#menu" class="menuToggle"><span>Details</span></a>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
 											<li><a href="https://cxchew.github.io/">Home</a></li>
 											<li><a href="https://github.com/cxchew/cxchew.github.io">My Template</a></li>
-											<li><a href="https://github.com/cxchew/cxchew.github.io/tree/main/images">Images Used</a></li>
 										</ul>
 									</div>
 								</li>
@@ -53,12 +210,12 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<h2>Chew Chiu Xian</h2>
-							<p>22-year-old Year 3 Data Engineering Student<br />
+							<h2 style="text-shadow: 0 4px 15px rgba(0,0,0,0.5);">Chew Chiu Xian</h2>
+							<p style="font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.8); letter-spacing: 0.5px;">22-year-old Data Engineering Year 3 undergraduate<br />
 							at Universiti Teknologi Malaysia (UTM)<br />
-							with a current CGPA of 3.98.</p>
+							holding a 3.98 CGPA.</p>
 							<ul class="actions special">
-								<li><a href="https://github.com/cxchew" class="button primary">My GitHub Pages</a></li>
+								<li><a href="https://github.com/cxchew" class="button primary" style="background: #3A2FF7; border: none; box-shadow: 0 4px 15px rgba(58, 47, 247, 0.4);">My GitHub Pages</a></li>
 							</ul>
 						</div>
 						<a href="#one" class="more scrolly">Learn More</a>
@@ -67,57 +224,104 @@
 				<!-- One -->
 					<section id="one" class="wrapper style1 special">
 						<div class="inner">
-							<header class="major">
-								<h2>About Me</h2>
-								<p>Hi there!☺️ Welcome to my e-portfolio page. Let me introduce myself. My name is Chew Chiu Xian. I'm 22 years old. I always love to have a jog early in the morning to stretch my legs🦵.<br/>
-									Sometimes, I will also play badminton with my fellow friends!🏸. Rollercoasters may not be my favourite, but I'm about to bring all of you for a fun ride to explore the world of data.🎢<br/>
-								Now, without further waiting, let's get Started!!!</p>
-								<p align="center"><img src="images/WhatsApp Image 2024-01-17 at 08.57.38.jpeg" width="70%" height="70%" alt="Profile Photo" /></p>
-							</header>
-							<ul class="icons major">
-								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
-								<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
-								<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
-							</ul>
+							<div class="glass-card" style="text-align: center;">
+								<header class="major">
+									<h2>Executive Summary</h2>
+									<p style="font-size: 1.1em; line-height: 1.8;">Hi there! Welcome to my premium e-portfolio. I am an analytical and technically-driven Data Engineering student passionate about crafting robust architectures, analyzing complex datasets, and building highly scalable cloud solutions. I'm excited to bring you on a journey exploring my professional ecosystem and data-centric deliverables.</p>
+									<p align="center"><img src="images/WhatsApp Image 2024-01-17 at 08.57.38.jpeg" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 4px solid #3A2FF7; box-shadow: 0 0 20px rgba(58, 47, 247, 0.5);" alt="Profile Photo" /></p>
+								</header>
+							</div>
 						</div>
 					</section>
 
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="https://media.karousell.com/media/photos/products/2018/10/07/programming_assignment_c_c_java_python_1538881854_a148ed2e_progressive.jpg" alt="Skills Matrix" /></div><div class="content">
+							<div class="image css-pattern-1">
+								<i class="icon solid fa-code pattern-icon"></i>
+							</div>
+							<div class="content glass-content">
 								<h2>Technical Matrix & Ecosystem Weaponry</h2>
-								<p>Equipped with a versatile toolkit spanning software development, database architecture, and data engineering. 💻🧑‍💻 Below is my tech stack:</p>
-								<ul style="list-style-type: none; padding: 0;">
-									<li style="margin-bottom: 10px;"><strong>🛠️ Programming & Databases:</strong> Python, SQL (MS SQL Server), C++, PHP, JavaScript, MySQL.</li>
-									<li style="margin-bottom: 10px;"><strong>☁️ Cloud, DevOps & Analytics:</strong> Microsoft Azure, Docker, Git/GitHub, XAMPP, Power BI, Alteryx Designer, Excel, Figma.</li>
-									<li><strong>🧠 Soft Skills:</strong> Analytical Thinking, Complex Problem-Solving, Team Collaboration, Time Management, Technical Communication, Team Leadership.</li>
+								<p>Equipped with a versatile toolkit spanning software development, database architecture, and data engineering.</p>
+								
+								<h4 style="margin-top: 1em; color: #fff;">Languages & Engines</h4>
+								<div class="tag-grid">
+									<span class="tag">Python</span>
+									<span class="tag">SQL (MS SQL)</span>
+									<span class="tag">C++</span>
+									<span class="tag">PHP</span>
+									<span class="tag">JavaScript</span>
+									<span class="tag">MySQL</span>
+									<span class="tag">HTML/CSS</span>
+								</div>
+
+								<h4 style="margin-top: 1.5em; color: #fff;">Clouds & Data Platforms</h4>
+								<div class="tag-grid">
+									<span class="tag">Microsoft Azure</span>
+									<span class="tag">Docker Desktop</span>
+									<span class="tag">Git/GitHub</span>
+									<span class="tag">XAMPP</span>
+									<span class="tag">Power BI</span>
+									<span class="tag">Alteryx Designer</span>
+									<span class="tag">Excel</span>
+									<span class="tag">Figma</span>
+								</div>
+
+								<h4 style="margin-top: 1.5em; color: #fff;">Executive Competencies</h4>
+								<div class="tag-grid">
+									<span class="tag">Analytical Thinking</span>
+									<span class="tag">Complex Problem-Solving</span>
+									<span class="tag">Team Collaboration</span>
+									<span class="tag">Time Management</span>
+									<span class="tag">Technical Communication</span>
+									<span class="tag">Team Leadership</span>
+								</div>
+							</div>
+						</section>
+						
+						<section class="spotlight">
+							<div class="image css-pattern-2">
+								<i class="icon solid fa-graduation-cap pattern-icon"></i>
+							</div>
+							<div class="content glass-content">
+								<h2>Education & Academic Trajectory</h2>
+								<p>My academic foundation is built upon rigorous programs and leadership roles.</p>
+								<ul style="list-style: none; padding: 0;">
+									<li style="margin-bottom: 1em;">
+										<strong>Universiti Teknologi Malaysia (UTM)</strong><br/>
+										<span style="color: #00E5FF;">Year 3 Data Engineering Student (CGPA: 3.98)</span>
+									</li>
+									<li style="margin-bottom: 1em;">
+										<strong>Kelantan Matriculation College</strong><br/>
+										<span style="color: #bbb;">Trader for the Secretariat Society</span>
+									</li>
+									<li>
+										<strong>SMK Sultan Yahya Petra 1</strong><br/>
+										<span style="color: #bbb;">Secondary Education</span>
+									</li>
 								</ul>
 							</div>
 						</section>
+
 						<section class="spotlight">
-							<div class="image"><img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/What-Skills-Do-I-Need-to-Become-a-Data-Scientist.jpg" width="90%" height="90%" alt="Ambition" /></div><div class="content">
-								<h2>Ambition</h2>
-								<p>Many might think that my ambition is to become a Data Engineer, but my true ambition is to become a Data Scientist. You might wonder, "Why did I choose the Data Engineering course in UTM,
-								 and not the Data Science course?🤔". Well, the reason I chose Data Engineering is because it helps me understand more about the core processes of managing 
-								and storing data, which builds a rock-solid foundation for my future career.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="https://apicms.thestar.com.my/uploads/images/2023/06/04/2108856.jpeg" alt="Education" /></div><div class="content">
-								<h2>Education 🏫</h2>
-								<p>As mentioned before, I am currently a Year 3 Data Engineering Student at UTM Johore, having entered the university on 1st October 2023. Prior to university, I studied at Kelantan Matriculation College, located in Pasir Puteh, Kelantan, where I actively served as a Trader for the Secretariat Society. My earlier education was completed at Sekolah Menengah Kebangsaan Sultan Yahya Petra 1.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="https://t3.ftcdn.net/jpg/03/48/82/72/360_F_348827252_jiRP2iPXPsSSocitv90vj3z7RYjXoP3O.jpg" alt="Hackathons" style="object-fit: cover;" /></div><div class="content">
-								<h2>Hackathons & Computational Achievements 🏆</h2>
-								<p>I actively participate in hackathons to challenge myself and build innovative tech solutions under pressure. Some of my recent competitive achievements include:</p>
-								<ul style="line-height: 1.8;">
-									<li><strong>Project 2030: MyAI Future Hackathon | Build with AI 2026</strong> <br/><em>(GDG on Campus UTM - Secure Digital Track)</em></li>
-									<li><strong>4th Place | Cisco AI Hackathon 2024</strong></li>
-									<li><strong>MCMC Datathon 2024 Recognition</strong></li>
-									<li><strong>Data Science Digital Race (DSDR) Qualifier</strong></li>
+							<div class="image"><img src="images/AI_Hackathon.jpeg" alt="Hackathons" style="object-fit: cover;" /></div>
+							<div class="content glass-content">
+								<h2>Hackathons & Trophies 🏆</h2>
+								<p>I thrive in high-pressure computational arenas. Here are my elite competitive milestones:</p>
+								<ul style="list-style: none; padding: 0;">
+									<li style="margin-bottom: 1em; padding-left: 20px; border-left: 3px solid #00E5FF;">
+										<strong style="color: #fff;">Project 2030: MyAI Future Hackathon | Build with AI 2026</strong><br/>
+										<span style="color: #aaa; font-size: 0.9em;">GDG on Campus UTM - Secure Digital Track</span>
+									</li>
+									<li style="margin-bottom: 1em; padding-left: 20px; border-left: 3px solid #3A2FF7;">
+										<strong style="color: #fff;">4th Place | Cisco AI Hackathon 2024</strong>
+									</li>
+									<li style="margin-bottom: 1em; padding-left: 20px; border-left: 3px solid #00E5FF;">
+										<strong style="color: #fff;">MCMC Datathon 2024 Recognition</strong>
+									</li>
+									<li style="padding-left: 20px; border-left: 3px solid #3A2FF7;">
+										<strong style="color: #fff;">Data Science Digital Race (DSDR) Qualifier</strong>
+									</li>
 								</ul>
 							</div>
 						</section>
@@ -126,93 +330,101 @@
 				<!-- Three -->
 					<section id="three" class="wrapper style3 special">
 						<div class="inner">
-							<header class="major">
-								<h2>Featured High-Level Engineering Platforms</h2>
-								<p>Explore my top 4 engineering architectures and systems below. Click on the project titles to view more details or live deployments.</p>
+							<header class="major" style="margin-bottom: 2em;">
+								<h2>Major Platforms & Featured Architectures</h2>
+								<p>Explore my top 4 premium engineering systems. These platforms demonstrate my capability across full-stack development, cloud modeling, and enterprise data analytics.</p>
 							</header>
-							<ul class="features">
-								<li class="icon solid fa-cloud">
-									<h3><a href="#" style="text-decoration: none; border-bottom: none;">Recoverable Assets & Inventory Risk Pipeline</a></h3>
-									<p><strong>Stack:</strong> Azure, Power BI</p>
-									<p>An enterprise pipeline for analyzing recoverable assets and modeling inventory risk using Microsoft Azure and visualizing through Power BI dashboards.</p>
-								</li>
-								<li class="icon solid fa-database">
-									<h3><a href="#" style="text-decoration: none; border-bottom: none;">Academic Advising & Progress Tracker</a></h3>
-									<p><strong>Stack:</strong> SAP Build Apps, MySQL, UML Architecture</p>
-									<p>A comprehensive tracking system managing academic advising and student progress, built on a robust UML architecture with SAP Build Apps and MySQL.</p>
-								</li>
-								<li class="icon solid fa-server">
-									<h3><a href="#" style="text-decoration: none; border-bottom: none;">KADA Cooperative Cloud Architecture</a></h3>
-									<p><strong>Stack:</strong> PHP, MySQL, HTML5/CSS3, JavaScript</p>
-									<p>A cooperative cloud financial architecture designed to manage operations securely, utilizing PHP and a fully responsive frontend design.</p>
-								</li>
-								<li class="icon fa-leaf">
-									<h3><a href="https://bioflora.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; border-bottom: none;">BioFlora Plant Identification Hub</a></h3>
-									<p><strong>Stack:</strong> Astro Framework, MDX Engine, Tailwind CSS</p>
-									<p>A lightning-fast, modern botanical identification hub powered by Astro, leveraging an MDX Engine for content and styled impeccably with Tailwind CSS.</p>
-								</li>
-							</ul>
+							
+							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+								<!-- Project 1 -->
+								<div class="glass-card">
+									<h3 style="font-size: 1.25em; margin-bottom: 0.5em;"><a href="#" target="_blank" rel="noopener noreferrer">Recoverable Assets Pipeline</a></h3>
+									<p style="font-size: 0.85em; color: #00E5FF; margin-bottom: 1em; font-weight: 600;">Azure • Power BI</p>
+									<p style="font-size: 0.95em; line-height: 1.6;">An enterprise pipeline for analyzing recoverable assets and modeling inventory risk using Microsoft Azure and visualizing through Power BI dashboards.</p>
+								</div>
+								
+								<!-- Project 2 -->
+								<div class="glass-card">
+									<h3 style="font-size: 1.25em; margin-bottom: 0.5em;"><a href="#" target="_blank" rel="noopener noreferrer">Academic Advising System</a></h3>
+									<p style="font-size: 0.85em; color: #00E5FF; margin-bottom: 1em; font-weight: 600;">SAP Build Apps • MySQL • UML</p>
+									<p style="font-size: 0.95em; line-height: 1.6;">A comprehensive tracking system managing academic advising and student progress, built on a robust UML architecture.</p>
+								</div>
 
-							<hr style="border: none; border-top: 1px solid #555555; margin: 40px 0;" />
+								<!-- Project 3 -->
+								<div class="glass-card">
+									<h3 style="font-size: 1.25em; margin-bottom: 0.5em;"><a href="#" target="_blank" rel="noopener noreferrer">KADA Cloud Platform</a></h3>
+									<p style="font-size: 0.85em; color: #00E5FF; margin-bottom: 1em; font-weight: 600;">PHP • MySQL • HTML5/CSS3 • JS</p>
+									<p style="font-size: 0.95em; line-height: 1.6;">A cooperative cloud financial architecture designed to manage operations securely, utilizing PHP and a fully responsive frontend design.</p>
+								</div>
 
-							<h2 style="font-family: inherit; color: #ffffff;">🗺️ Academic Curriculum & Repository Index</h2>
-							<p style="color: #bbbbbb;">A comprehensive directory tracking the programmatic deliverables, architectures, and systems engineered across my 3-year undergraduate timeline:</p>
+								<!-- Project 4 -->
+								<div class="glass-card">
+									<h3 style="font-size: 1.25em; margin-bottom: 0.5em;"><a href="https://bioflora.vercel.app/" target="_blank" rel="noopener noreferrer">Live BioFlora Hub</a></h3>
+									<p style="font-size: 0.85em; color: #00E5FF; margin-bottom: 1em; font-weight: 600;">Astro Framework • MDX • Tailwind CSS</p>
+									<p style="font-size: 0.95em; line-height: 1.6;">A lightning-fast, modern botanical identification hub powered by Astro, leveraging an MDX Engine for content and styled impeccably with Tailwind.</p>
+								</div>
+							</div>
 
-							<table width="100%" cellpadding="10" cellspacing="0" border="0" style="font-family: inherit; margin-top: 20px;">
-							  <tr>
-								<td width="33.3%" valign="top" style="border-right: 1px dashed #666666; padding-right: 15px;">
-								  <h3 style="margin-top: 0; color: #ffffff;">🗓️ Year 1</h3>
-								  <ul style="line-height: 1.8; padding-left: 20px; text-align: left;">
-									<li>💻 <a href="https://github.com/cxchew/Programming-Technique" target="_blank" rel="noopener noreferrer" class="repo-link">Programming Technique</a></li>
-									<li>⚡ <a href="https://github.com/cxchew/Digital-Logic" target="_blank" rel="noopener noreferrer" class="repo-link">Digital Logic</a></li>
-									<li>🧮 <a href="https://github.com/cxchew/Discrete-Structure" target="_blank" rel="noopener noreferrer" class="repo-link">Discrete Structure</a></li>
-									<li>🧭 <a href="https://github.com/cxchew/TIS-02-2023" target="_blank" rel="noopener noreferrer" class="repo-link">Information System & Tech</a></li>
-									<li>⚖️ <a href="https://github.com/cxchew/ULRS1032-10/tree/main" target="_blank" rel="noopener noreferrer" class="repo-link">Integrity & Anti-Corruption</a></li>
-									<li>🌿 <a href="https://bioflora.vercel.app/" target="_blank" rel="noopener noreferrer" class="repo-link">BioFlora Plant Hub</a></li>
-								  </ul>
-								</td>
-								<td width="33.3%" valign="top" style="border-right: 1px dashed #666666; padding-left: 15px; padding-right: 15px;">
-								  <h3 style="margin-top: 0; color: #ffffff;">🗓️ Year 2</h3>
-								  <ul style="line-height: 1.8; padding-left: 20px; text-align: left;">
-									<li>🐧 <a href="https://github.com/cxchew/Operating-System" target="_blank" rel="noopener noreferrer" class="repo-link">Operating System</a></li>
-									<li>🛢️ <a href="https://github.com/cxchew/Database" target="_blank" rel="noopener noreferrer" class="repo-link">Database Systems</a></li>
-									<li>🧦 <a href="https://github.com/cxchew/Network-Communication" target="_blank" rel="noopener noreferrer" class="repo-link">Network Communication</a></li>
-									<li>🐘 <a href="https://github.com/cxchew/StudentRegistrationSystem" target="_blank" rel="noopener noreferrer" class="repo-link">Student Registration CRUD</a></li>
-									<li>⛏️ <a href="https://github.com/cxchew/Data-Mining" target="_blank" rel="noopener noreferrer" class="repo-link">Data Mining Algorithms</a></li>
-									<li>💳 <a href="https://github.com/cxchew/KADA-system" target="_blank" rel="noopener noreferrer" class="repo-link">KADA Financial System</a></li>
-								  </ul>
-								</td>
-								<td width="33.3%" valign="top" style="padding-left: 15px;">
-								  <h3 style="margin-top: 0; color: #ffffff;">🗓️ Year 3</h3>
-								  <ul style="line-height: 1.8; padding-left: 20px; text-align: left;">
-									<li>🏢 <a href="https://github.com/cxchew/ESDM" target="_blank" rel="noopener noreferrer" class="repo-link">Enterprise Systems Design</a></li>
-									<li>📆 <a href="https://github.com/cxchew/ESDM-Advising-Appointment-Scheduling" target="_blank" rel="noopener noreferrer" class="repo-link">Advising Appointment App</a></li>
-									<li>🤖 <a href="https://github.com/cxchew/Artificial-Intelligence" target="_blank" rel="noopener noreferrer" class="repo-link">Artificial Intelligence</a></li>
-									<li>⚡ <a href="https://github.com/cxchew/HPDP" target="_blank" rel="noopener noreferrer" class="repo-link">High Performance Data Proc</a></li>
-									<li>📱 <a href="https://github.com/brendan-chia/App-Development-_GENIUSAQILOS" target="_blank" rel="noopener noreferrer" class="repo-link">App Dev GENIUSAQILOS</a></li>
-									<li>🛡️ <a href="https://github.com/cxchew/Special-Topic-to-Data-Engineering" target="_blank" rel="noopener noreferrer" class="repo-link">Special Topics in DE</a></li>
-								  </ul>
-								</td>
-							  </tr>
-							</table>
+							<hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 60px 0;" />
+
+							<div class="glass-card" style="padding: 3em;">
+								<h2 style="font-family: inherit; color: #ffffff; text-align: center;">🗺️ Academic Curriculum & Repository Index</h2>
+								<p style="color: #bbbbbb; text-align: center; max-width: 800px; margin: 0 auto;">A comprehensive directory tracking the programmatic deliverables, architectures, and systems engineered across my 3-year undergraduate timeline:</p>
+
+								<div class="academic-matrix">
+									<div class="academic-col">
+										<h3>🗓️ Year 1</h3>
+										<ul>
+											<li><a href="https://github.com/cxchew/Programming-Technique" target="_blank" rel="noopener noreferrer" class="repo-link">Programming Technique</a></li>
+											<li><a href="https://github.com/cxchew/Digital-Logic" target="_blank" rel="noopener noreferrer" class="repo-link">Digital Logic</a></li>
+											<li><a href="https://github.com/cxchew/Discrete-Structure" target="_blank" rel="noopener noreferrer" class="repo-link">Discrete Structure</a></li>
+											<li><a href="https://github.com/cxchew/TIS-02-2023" target="_blank" rel="noopener noreferrer" class="repo-link">Information System & Tech</a></li>
+											<li><a href="https://github.com/cxchew/ULRS1032-10/tree/main" target="_blank" rel="noopener noreferrer" class="repo-link">Integrity & Anti-Corruption</a></li>
+											<li><a href="https://bioflora.vercel.app/" target="_blank" rel="noopener noreferrer" class="repo-link">BioFlora Plant Hub</a></li>
+										</ul>
+									</div>
+									<div class="academic-col">
+										<h3>🗓️ Year 2</h3>
+										<ul>
+											<li><a href="https://github.com/cxchew/Operating-System" target="_blank" rel="noopener noreferrer" class="repo-link">Operating System</a></li>
+											<li><a href="https://github.com/cxchew/Database" target="_blank" rel="noopener noreferrer" class="repo-link">Database Systems</a></li>
+											<li><a href="https://github.com/cxchew/Network-Communication" target="_blank" rel="noopener noreferrer" class="repo-link">Network Communication</a></li>
+											<li><a href="https://github.com/cxchew/StudentRegistrationSystem" target="_blank" rel="noopener noreferrer" class="repo-link">Student Registration CRUD</a></li>
+											<li><a href="https://github.com/cxchew/Data-Mining" target="_blank" rel="noopener noreferrer" class="repo-link">Data Mining Algorithms</a></li>
+											<li><a href="https://github.com/cxchew/KADA-system" target="_blank" rel="noopener noreferrer" class="repo-link">KADA Financial System</a></li>
+										</ul>
+									</div>
+									<div class="academic-col">
+										<h3>🗓️ Year 3</h3>
+										<ul>
+											<li><a href="https://github.com/cxchew/ESDM" target="_blank" rel="noopener noreferrer" class="repo-link">Enterprise Systems Design</a></li>
+											<li><a href="https://github.com/cxchew/ESDM-Advising-Appointment-Scheduling" target="_blank" rel="noopener noreferrer" class="repo-link">Advising Appointment App</a></li>
+											<li><a href="https://github.com/cxchew/Artificial-Intelligence" target="_blank" rel="noopener noreferrer" class="repo-link">Artificial Intelligence</a></li>
+											<li><a href="https://github.com/cxchew/HPDP" target="_blank" rel="noopener noreferrer" class="repo-link">High Performance Data Proc</a></li>
+											<li><a href="https://github.com/brendan-chia/App-Development-_GENIUSAQILOS" target="_blank" rel="noopener noreferrer" class="repo-link">App Dev GENIUSAQILOS</a></li>
+											<li><a href="https://github.com/cxchew/Special-Topic-to-Data-Engineering" target="_blank" rel="noopener noreferrer" class="repo-link">Special Topics in DE</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</section>
 
 				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-								<h2>Thank You For Reading My E-portfolio</h2>
-								<p>The pages will be kept updated to the latest in the future. Stay Tuned😊</p>
+					<section id="cta" class="wrapper style4" style="background: rgba(10, 10, 15, 0.9);">
+						<h2>Let's Interconnect 🚀</h2>
+						<p>Thank you for exploring my Data Engineering Dashboard. Open to collaboration, hackathons, and enterprise engineering opportunities.</p>
 					</section>
 
 				<!-- Footer -->
-					<footer id="footer">
+					<footer id="footer" style="background: #0a0a0f;">
 						<ul class="icons">
-							<li><a href="https://www.facebook.com/profile.php?id=100091397872422&mibextid=ZbWKwL" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="https://www.instagram.com/cxchew04?igsh=bm1nYTg2NGFra2hr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/cxchew" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.facebook.com/profile.php?id=100091397872422&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/cxchew04?igsh=bm1nYTg2NGFra2hr" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/cxchew" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; Chew Chiu Xian. All rights reserved.</li><li>Design Architecture: Custom Dashboard via <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
 						</ul>
 					</footer>
 
