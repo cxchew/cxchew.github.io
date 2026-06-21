@@ -142,6 +142,15 @@
 		/* Spotlight structural overrides */
 		.spotlight {
 			background: transparent !important;
+			align-items: stretch !important;
+		}
+
+		.spotlight .image {
+			border-radius: 16px;
+			margin: 20px;
+			overflow: hidden;
+			border: 1px solid rgba(0, 229, 255, 0.2);
+			box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 		}
 
 		.spotlight .content {
@@ -150,6 +159,9 @@
 			border: 1px solid rgba(0, 229, 255, 0.2);
 			border-radius: 16px;
 			margin: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}
 
 		.spotlight .image.css-pattern-1 {
@@ -176,6 +188,26 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+
+		/* Projects Grid */
+		.projects-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 20px;
+			text-align: left;
+		}
+
+		@media screen and (max-width: 1200px) {
+			.projects-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			.projects-grid {
+				grid-template-columns: 1fr;
+			}
 		}
 
 		/* Academic Matrix Enhancements */
@@ -426,8 +458,7 @@
 						analytics.</p>
 				</header>
 
-				<div
-					style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; text-align: left;">
+				<div class="projects-grid">
 					<!-- Project 1 -->
 					<div class="glass-card" style="margin: 0; padding: 2em;">
 						<h3 style="font-size: 1.3em; margin-bottom: 0.5em;"><a href="#" target="_blank"
